@@ -3,6 +3,8 @@ const { initGame, gameLoop, getUpdatedVelocity } = require('./game');
 const { FRAME_RATE } = require('./constants');
 const { makeId } = require('./utils');
 
+io.set('origins', 'https://zealous-varahamihira-3a3537.netlify.app/');
+
 const state = {};
 const clientRooms = {};
 
