@@ -3,7 +3,12 @@ const { initGame, gameLoop, getUpdatedVelocity } = require('./game');
 const { FRAME_RATE } = require('./constants');
 const { makeId } = require('./utils');
 
-io.set('origins', 'https://zealous-varahamihira-3a3537.netlify.app/');
+io.origins((origin, callback) => {
+  if (origin !== 'https://zealous-varahamihira-3a3537.netlify.app') {
+    return callback('origin not allowed', false);
+  }
+  callback(null, true);
+});
 
 const state = {};
 const clientRooms = {};
