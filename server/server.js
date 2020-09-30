@@ -49,7 +49,7 @@ io.on('connection', (client) => {
   }
 
   function handleNewGame() {
-    let roomName = makeId(5);
+    let roomName = makeId(2);
     clientRooms[client.id] = roomName;
     client.emit('gameCode', roomName);
 
